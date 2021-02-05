@@ -3,17 +3,17 @@ public class Trainer {
         Duck d = new Duck();
         getToSpeak(d);
 
-        Bird b = (Bird)d;  // upcasting
+        Bird b = (Bird) d;  // upcasting
         getToSpeak(b);
 
-        Animal a = (Animal)b; // upcasting
+        Animal a = (Animal) b; // upcasting
         getToSpeak(a);
 
         Duck d2 = (Duck) a; // downcasting
         train(new Duck());
         // train(new Parrot());
-        Animal a2 = new Animal();
-        Bird b2 = new Bird();
+        // Animal a2 = new Animal();
+        // Bird b2 = new Bird();
     }
 
     private static void getToSpeak(Animal animal) {
@@ -21,7 +21,9 @@ public class Trainer {
     }
 
     private static void train(Bird bird) {
-        Duck d = (Duck) bird;
-        d.swim();
+        if (bird instanceof Duck) {
+            Duck d = (Duck) bird;
+            d.swim();
+        }
     }
 }
